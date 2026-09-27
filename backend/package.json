@@ -11,6 +11,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@ai-sdk/google": "^3.0.128",
     "@descope/mcp-express": "^1.6.0",
     "@descope/node-sdk": "^2.14.0",
     "@mastra/core": "^1.59.0",
