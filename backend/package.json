@@ -1,0 +1,33 @@
+{
+  "name": "syntra-backend",
+  "version": "1.0.0",
+  "description": "Syntra - Fullstack Agentic AI Backend",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "migrate": "tsx src/migrations/run.ts"
+  },
+  "dependencies": {
+    "@descope/node-sdk": "latest",
+    "@mastra/core": "latest",
+    "@modelcontextprotocol/sdk": "latest",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.0",
+    "googleapis": "latest",
+    "pg": "^8.13.0",
+    "uuid": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/cors": "latest",
+    "@types/express": "latest",
+    "@types/node": "latest",
+    "@types/pg": "latest",
+    "@types/uuid": "latest",
+    "tsx": "latest",
+    "typescript": "latest"
+  }
+}
