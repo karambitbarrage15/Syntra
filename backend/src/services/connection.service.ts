@@ -36,6 +36,7 @@ export async function createCalendarConnectUrl(input: {
   );
 
   if (!response.ok || !response.data?.url) {
+    console.error("Descope connect error:", response.error);
     throw new Error("could not start connection");
   }
 

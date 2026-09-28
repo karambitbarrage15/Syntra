@@ -64,8 +64,8 @@ function ConnectionsPanel({ sessionToken }: { sessionToken: string }) {
     setBusy(true);
     try {
       await connectCalendar(sessionToken);
-    } catch {
-      console.log("failed to connect");
+    } catch (e: any) {
+      alert("failed to connect: " + e.message);
     }
   }
 
