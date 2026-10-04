@@ -12,7 +12,7 @@ connectionRouter.use(requireSession);
 
 connectionRouter.get("/", async (req, res) => {
   try {
-    const connection = await getCalendarConnection(req.auth!.userId);
+    const connection = await getCalendarConnection(req.userSession!.userId);
 
     res.json({ connection });
   } catch (err) {
@@ -28,6 +28,7 @@ connectionRouter.post("/connect", async (req, res) => {
 
     if (!refreshToken) {
       res.status(400).json({ error: "Refresh token required" });
+      return;
     }
 
     const redirectUrl =
@@ -36,7 +37,7 @@ connectionRouter.post("/connect", async (req, res) => {
         : `${process.env.APP_URL ?? "http://localhost:3000"}/dashboard`;
 
     const result = await createCalendarConnectUrl({
-      userId: req.auth!.userId,
+      userId: req.userSession!.userId,
       refreshToken,
       redirectUrl,
     });
@@ -51,8 +52,8 @@ connectionRouter.post("/refresh-status", async (req, res) => {
   console.log("HIT /refresh-status API");
   try {
     const connection = await refreshCalendarConnection({
-      userId: req.auth!.userId,
-      authUserId: req.auth!.authUserId,
+      userId: req.userSession!.userId,
+      authUserId: req.userSession!.authUserId,
     });
     console.log("Refresh connection result:", connection);
     res.json({ connection });
