@@ -58,6 +58,8 @@ export async function refreshCalendarConnection(input: {
       calendarAppId(),
       input.authUserId,
     );
+  
+  console.log("fetchToken response:", JSON.stringify(response, null, 2));
 
   const status = response.ok && response.data ? "connected" : "disconnected";
 
