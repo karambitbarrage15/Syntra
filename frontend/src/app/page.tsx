@@ -114,6 +114,39 @@ export default function Home() {
             How to Use Syntra <br/> <span className="text-2xl opacity-70">See your smart calendar organize your world</span>
           </h2>
 
+          {/* 3 Step Instruction Boxes */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mx-auto mb-16 px-4">
+            <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm text-left hover:bg-white/10 transition-colors">
+              <div className="size-12 rounded-full bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center mb-6">
+                <Calendar className="text-cyan-400 size-6 stroke-1" />
+              </div>
+              <h3 className="text-2xl font-light mb-3">1. Connect</h3>
+              <p className="text-sm font-light text-white/70 leading-relaxed">
+                Sign in with your Google account. We securely connect to your calendar so Syntra knows when you are busy.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm text-left hover:bg-white/10 transition-colors">
+              <div className="size-12 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center mb-6">
+                <MessageSquare className="text-purple-400 size-6 stroke-1" />
+              </div>
+              <h3 className="text-2xl font-light mb-3">2. Chat</h3>
+              <p className="text-sm font-light text-white/70 leading-relaxed">
+                Just chat with the AI! Ask it to "schedule a 30m sync on Tuesday" or "what does my tomorrow look like?"
+              </p>
+            </div>
+
+            <div className="p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm text-left hover:bg-white/10 transition-colors">
+              <div className="size-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mb-6">
+                <CalendarClock className="text-emerald-400 size-6 stroke-1" />
+              </div>
+              <h3 className="text-2xl font-light mb-3">3. Relax</h3>
+              <p className="text-sm font-light text-white/70 leading-relaxed">
+                Syntra does the heavy lifting. It finds the perfect time slot and books the event instantly on your behalf.
+              </p>
+            </div>
+          </div>
+
           {/* Dot Matrix Calendar Graphic */}
           <div className="relative w-full aspect-[2/1] max-w-4xl mx-auto flex flex-col gap-2 p-8 mb-20">
             {/* Generating a dot matrix grid mimicking a calendar layout */}
