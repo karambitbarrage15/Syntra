@@ -157,6 +157,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FOOTER */}
+      <footer className="w-full bg-[#151515] text-white/50 py-12 px-6 lg:px-24 flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-light border-t border-white/5">
+        <div className="flex items-center gap-2 opacity-80">
+          <Bot className="size-5" />
+          <span>Syntra AI © 2026. All rights reserved.</span>
+        </div>
+        <div className="flex gap-8">
+          {/* These links are great to have ready for Google's App Verification! */}
+          <a href="#" className="hover:text-white transition">Privacy Policy</a>
+          <a href="#" className="hover:text-white transition">Terms of Service</a>
+          <a href="#" className="hover:text-white transition">Contact Us</a>
+        </div>
+        <div className="flex gap-4">
+          <a href="https://github.com/karambitbarrage15/Syntra" target="_blank" rel="noreferrer" className="px-4 py-2 rounded bg-white/5 hover:bg-white/10 transition border border-white/10">GitHub</a>
+          <button className="px-4 py-2 rounded bg-white/5 hover:bg-white/10 transition border border-white/10">Twitter</button>
+        </div>
+      </footer>
+
     </div>
   );
 }
