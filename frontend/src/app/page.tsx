@@ -1,105 +1,162 @@
 import Link from "next/link";
-import { ArrowRight, Calendar, Bot, Zap, Shield } from "lucide-react";
+import { Bot, Calendar, CalendarClock, MessageSquare, Globe, ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 selection:bg-indigo-500/30">
-      {/* Subtle Background Glow */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-1/2 -left-1/2 w-[1000px] h-[1000px] rounded-full bg-indigo-500/10 blur-[120px] mix-blend-screen" />
-        <div className="absolute -bottom-1/2 -right-1/2 w-[800px] h-[800px] rounded-full bg-purple-500/10 blur-[120px] mix-blend-screen" />
-      </div>
+    <div className="min-h-screen bg-slate-900 font-sans selection:bg-white/30">
+      
+      {/* SECTION 1: HERO (Image Background) */}
+      <section 
+        className="relative min-h-screen w-full flex flex-col items-center pt-24 pb-12 px-6 lg:px-24 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2073&auto=format&fit=crop')" }}
+      >
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/20" />
 
-      {/* Navigation */}
-      <nav className="relative z-10 flex items-center justify-between p-6 max-w-7xl mx-auto">
-        <div className="flex items-center gap-2">
-          <div className="size-8 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-            <Bot className="size-5 text-white" />
+        {/* Top Navbar */}
+        <nav className="absolute top-0 left-0 right-0 p-8 flex justify-between items-center z-20 text-white w-full max-w-[1600px] mx-auto">
+          <div className="flex items-center gap-3">
+            <Bot className="size-8 stroke-1" />
+            <span className="text-2xl font-medium tracking-wide">Syntra <br/><span className="text-sm font-light opacity-80">AI Assistant</span></span>
           </div>
-          <span className="font-bold text-xl tracking-tight">Syntra</span>
-        </div>
-        <Link 
-          href="/sign-in"
-          className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
-        >
-          Sign In
-        </Link>
-      </nav>
-
-      {/* Hero Section */}
-      <main className="relative z-10 flex flex-col items-center justify-center px-6 pt-32 pb-24 text-center max-w-5xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-sm font-medium mb-8 border border-indigo-500/20 backdrop-blur-sm">
-          <Zap className="size-4" />
-          <span>The next generation of AI scheduling</span>
-        </div>
-        
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
-          Your Agentic Calendar, <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-            Powered by AI.
-          </span>
-        </h1>
-        
-        <p className="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 leading-relaxed">
-          Syntra connects to your Google Calendar and acts as your personal autonomous agent. Ask it to schedule meetings, find open slots, or summarize your week.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
-          <Link
-            href="/sign-in"
-            className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-slate-950 rounded-full font-bold text-lg hover:bg-slate-100 transition-all hover:scale-105 active:scale-95 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]"
-          >
-            Get Started
-            <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <a
-            href="https://github.com/karambitbarrage15/Syntra"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 bg-slate-900 text-white rounded-full font-bold text-lg border border-slate-800 hover:bg-slate-800 transition-all hover:border-slate-700"
-          >
-            View GitHub
-          </a>
-        </div>
-      </main>
-
-      {/* Features Grid */}
-      <section className="relative z-10 max-w-7xl mx-auto px-6 pb-32">
-        <div className="grid md:grid-cols-3 gap-6">
-          {/* Feature 1 */}
-          <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/50 backdrop-blur-sm hover:bg-slate-900/80 transition-colors">
-            <div className="size-12 rounded-2xl bg-blue-500/10 flex items-center justify-center mb-6 border border-blue-500/20">
-              <Calendar className="size-6 text-blue-400" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-white">Google Calendar Sync</h3>
-            <p className="text-slate-400 leading-relaxed">
-              Seamlessly connects with your Google Workspace to read, create, and manage your events in real-time.
-            </p>
+          <div className="hidden md:flex gap-8 text-sm font-light">
+            <a href="#" className="hover:underline underline-offset-4">Home</a>
+            <a href="#" className="hover:underline underline-offset-4 opacity-70">Features</a>
+            <a href="#" className="hover:underline underline-offset-4 opacity-70">About us</a>
           </div>
+        </nav>
 
-          {/* Feature 2 */}
-          <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/50 backdrop-blur-sm hover:bg-slate-900/80 transition-colors">
-            <div className="size-12 rounded-2xl bg-purple-500/10 flex items-center justify-center mb-6 border border-purple-500/20">
-              <Bot className="size-6 text-purple-400" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-white">Conversational AI</h3>
-            <p className="text-slate-400 leading-relaxed">
-              Just chat normally. "What does my Tuesday look like?" or "Schedule a 30m sync with Alex tomorrow afternoon."
-            </p>
+        {/* Left Sidebar Menu */}
+        <div className="hidden lg:flex absolute left-8 top-1/3 flex-col gap-3 z-20 w-48">
+          <button className="px-4 py-2 rounded-full border border-white/40 bg-white/10 text-white text-sm font-light backdrop-blur-md text-left hover:bg-white/20 transition">
+            Your schedule
+          </button>
+          <button className="px-4 py-2 rounded-full border border-white/20 text-white/70 text-sm font-light backdrop-blur-md text-left hover:bg-white/10 hover:text-white transition">
+            Smart calendar
+          </button>
+          <button className="px-4 py-2 rounded-full border border-white/20 text-white/70 text-sm font-light backdrop-blur-md text-left hover:bg-white/10 hover:text-white transition">
+            Communicate
+          </button>
+        </div>
+
+        {/* Main Content */}
+        <div className="relative z-20 flex flex-col items-center text-center mt-12 md:mt-24 max-w-4xl text-white">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-light tracking-wide leading-tight mb-6 drop-shadow-lg">
+            Connect your calendar <br/>
+            to start scheduling now
+          </h1>
+          <p className="text-lg md:text-xl font-light opacity-90 max-w-2xl mb-12 drop-shadow-md">
+            For every meeting you schedule, our AI agent will save you hours of back-and-forth. <br/>
+            You can help streamline your daily workflow every day.
+          </p>
+
+          {/* Action "Timer-like" Buttons */}
+          <div className="flex flex-wrap justify-center gap-4 mb-24">
+            <Link href="/sign-in" className="flex flex-col items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-2xl border-2 border-white/30 backdrop-blur-md bg-black/10 hover:bg-white hover:text-slate-900 transition-all duration-300 group cursor-pointer">
+              <span className="text-3xl md:text-4xl font-light">1</span>
+              <span className="text-xs font-light opacity-80 uppercase tracking-widest mt-1 group-hover:opacity-100">Sync</span>
+            </Link>
+            <Link href="/sign-in" className="flex flex-col items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-2xl border-2 border-white/30 backdrop-blur-md bg-black/10 hover:bg-white hover:text-slate-900 transition-all duration-300 group cursor-pointer">
+              <span className="text-3xl md:text-4xl font-light">2</span>
+              <span className="text-xs font-light opacity-80 uppercase tracking-widest mt-1 group-hover:opacity-100">Chat</span>
+            </Link>
+            <Link href="/sign-in" className="flex flex-col items-center justify-center w-28 h-32 md:w-32 md:h-36 rounded-2xl border-2 border-white bg-white text-slate-900 shadow-xl hover:scale-105 transition-transform duration-300 group cursor-pointer -mt-4">
+              <span className="text-4xl md:text-5xl font-light">GO</span>
+              <span className="text-xs font-medium uppercase tracking-widest mt-2 text-slate-500">Sign In</span>
+            </Link>
+            <Link href="/sign-in" className="flex flex-col items-center justify-center w-24 h-24 md:w-28 md:h-28 rounded-2xl border-2 border-white/30 backdrop-blur-md bg-black/10 hover:bg-white hover:text-slate-900 transition-all duration-300 group cursor-pointer">
+              <span className="text-3xl md:text-4xl font-light">3</span>
+              <span className="text-xs font-light opacity-80 uppercase tracking-widest mt-1 group-hover:opacity-100">Relax</span>
+            </Link>
           </div>
+        </div>
 
-          {/* Feature 3 */}
-          <div className="p-8 rounded-3xl bg-slate-900/50 border border-slate-800/50 backdrop-blur-sm hover:bg-slate-900/80 transition-colors">
-            <div className="size-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-6 border border-emerald-500/20">
-              <Shield className="size-6 text-emerald-400" />
-            </div>
-            <h3 className="text-xl font-bold mb-3 text-white">Secure by Design</h3>
-            <p className="text-slate-400 leading-relaxed">
-              Powered by Descope for enterprise-grade authentication, ensuring your calendar data stays private.
-            </p>
+        {/* Bottom Bar Section 1 */}
+        <div className="absolute bottom-8 left-8 right-8 flex justify-between items-end z-20 text-white font-light text-sm">
+          <div>
+            <p>Total events scheduled: <strong className="font-medium">8,469</strong></p>
+            <p>Hours saved worldwide: <strong className="font-medium">21,050</strong></p>
+          </div>
+          <div className="hidden md:block opacity-60">
+            Copyright © 2026 Syntra
           </div>
         </div>
       </section>
+
+      {/* SECTION 2: DARK MODE (Dot Matrix Calendar) */}
+      <section className="relative min-h-screen w-full flex flex-col items-center pt-24 pb-12 px-6 lg:px-24 bg-[#1e1e1e]">
+        
+        {/* Left Sidebar Menu */}
+        <div className="hidden lg:flex absolute left-8 top-1/3 flex-col gap-3 z-20 w-48">
+          <button className="px-4 py-2 rounded-full border border-white/20 text-white/70 text-sm font-light text-left hover:bg-white/10 hover:text-white transition">
+            Your schedule
+          </button>
+          <button className="px-4 py-2 rounded-full border border-cyan-400 bg-cyan-400/10 text-cyan-400 text-sm font-light text-left hover:bg-cyan-400/20 transition">
+            Smart calendar
+          </button>
+          <button className="px-4 py-2 rounded-full border border-white/20 text-white/70 text-sm font-light text-left hover:bg-white/10 hover:text-white transition">
+            Communicate
+          </button>
+          
+          <div className="mt-12 flex flex-col gap-3">
+            <button className="px-4 py-1.5 rounded-full border border-white/20 text-white/70 text-xs font-light text-left hover:bg-white/10 transition">
+              + Zoom in
+            </button>
+            <button className="px-4 py-1.5 rounded-full border border-white/20 text-white/70 text-xs font-light text-left hover:bg-white/10 transition">
+              - Zoom out
+            </button>
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="relative z-20 flex flex-col items-center text-center mt-12 w-full max-w-5xl text-white">
+          <h2 className="text-3xl md:text-5xl font-light tracking-wide leading-tight mb-16 text-[#e0e0e0]">
+            Here you can see your smart <br/> calendar organize your world
+          </h2>
+
+          {/* Dot Matrix Calendar Graphic */}
+          <div className="relative w-full aspect-[2/1] max-w-4xl mx-auto flex flex-col gap-2 p-8">
+            {/* Generating a dot matrix grid mimicking a calendar layout */}
+            <div className="grid grid-cols-7 gap-4 w-full h-full">
+              {/* Days of week header */}
+              {['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map(day => (
+                <div key={day} className="text-center text-xs font-mono text-cyan-500/50 mb-4">{day}</div>
+              ))}
+              
+              {/* Calendar Grid (35 days) */}
+              {Array.from({ length: 35 }).map((_, i) => (
+                <div key={i} className="relative w-full aspect-square flex flex-col gap-1 p-1">
+                  {/* The dot matrix inside each day */}
+                  <div className="grid grid-cols-4 grid-rows-4 gap-1 w-full h-full opacity-60">
+                    {Array.from({ length: 16 }).map((_, j) => {
+                      // Randomly light up some dots in cyan to simulate busy times
+                      const isBusy = (i * j) % 7 === 3 || (i + j) % 11 === 0;
+                      return (
+                        <div 
+                          key={j} 
+                          className={`w-full h-full rounded-full transition-all duration-1000 ${
+                            isBusy ? 'bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]' : 'bg-[#333333]'
+                          }`}
+                        />
+                      );
+                    })}
+                  </div>
+                  
+                  {/* Floating tooltip on a specific day (mimicking the London tooltip in the ref) */}
+                  {i === 17 && (
+                    <div className="absolute -top-12 left-1/2 -translate-x-1/2 bg-white text-slate-900 text-xs py-2 px-3 rounded-md shadow-xl flex flex-col items-center z-30 whitespace-nowrap">
+                      <strong className="font-bold">Next Meeting</strong>
+                      <span>3 participants</span>
+                      <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
