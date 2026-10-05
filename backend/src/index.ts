@@ -37,6 +37,6 @@ app.use("/api/agent", agentRoutes);
 
 mountMcpServer(app);
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Agentic Calendar App is running on port: ${port}`);
 });
